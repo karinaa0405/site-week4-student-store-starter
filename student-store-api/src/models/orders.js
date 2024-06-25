@@ -11,7 +11,10 @@ const prisma = new PrismaClient();
 
     getOrderById = async (id) => {
         return prisma.order.findUnique({ 
-            where: { order_id: parseInt(id) } 
+            where: { order_id: parseInt(id) }, 
+            include:{
+                order_items: true
+            } 
         });
     };
 
