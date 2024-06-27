@@ -83,6 +83,9 @@ function App() {
     }
     
     const response2 = await axios.put(url2, updateItem);
+    const data2 = response2.data;
+    setOrder(data2);
+    
     setCart({});
     setIsCheckingOut(false);
   }
